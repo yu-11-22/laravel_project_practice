@@ -100,11 +100,11 @@
                         @csrf
                         <div class="form-group mt-5">
                             <div>
-                                <label for="inputAccount" class="col-form-label">帳號：</label>
+                                <label for="inputAccount" class="col-form-label">名稱：</label>
                             </div>
                             <div>
                                 <input type="text" name="username" class="form-control" id="inputAccount"
-                                    placeholder="請輸入帳號" autofocus>
+                                    placeholder="請輸入名稱" autofocus>
                             </div>
                         </div>
                         <div class="form-group">

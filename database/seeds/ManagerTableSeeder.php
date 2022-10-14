@@ -18,7 +18,7 @@ class ManagerTableSeeder extends Seeder
         for ($i = 0; $i < 100; $i++) {
             // 獲取數據
             $data[] = [
-                'username'      => $faker->name,
+                'username'      => \Faker\Factory::create('zh_CN')->userName,
                 'password'      => bcrypt('123456'),
                 'gender'        => rand(1, 3),
                 'mobile'        => $faker->phoneNumber,

@@ -40,6 +40,11 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+        // 自定義後端 guard
+        'admin' => [
+            'driver' => 'session',
+            'provider' => 'admin',
+        ],
 
         'api' => [
             'driver' => 'token',
@@ -68,6 +73,11 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\User::class,
+        ],
+        // guard 關聯的模型
+        'admin' => [
+            'driver' => 'eloquent',
+            'model' => App\Admin\Manager::class,
         ],
 
         // 'users' => [
