@@ -83,7 +83,7 @@
             }
         }
     </style>
-    <title>保笙後台系統</title>
+    <title>XX後台系統</title>
 </head>
 
 <body>

@@ -51,4 +51,17 @@ class PublicController extends Controller
             return view('admin.public.login');
         }
     }
+
+    /**
+     * 後台登出跳轉
+     *
+     * @return void
+     */
+    public function logout()
+    {
+        // 登出清除 session
+        Auth::guard('admin')->logout();
+        // 跳轉登入頁
+        return redirect('/admin/public/login');
+    }
 }

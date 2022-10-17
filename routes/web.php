@@ -17,4 +17,9 @@ Route::prefix('admin')->group(function () {
     Route::get('public/login', 'Admin\PublicController@login');
     // 後台登入的驗證頁面
     Route::post('public/check', 'Admin\PublicController@check');
+    // 後台登出頁面
+    Route::get('public/logout', 'Admin\PublicController@logout');
+    // 後台首頁
+    Route::get('index/index', 'Admin\IndexController@index');
+    Route::get('index/welcome', 'Admin\IndexController@welcome');
 });
