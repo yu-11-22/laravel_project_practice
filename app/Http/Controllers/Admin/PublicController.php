@@ -40,7 +40,7 @@ class PublicController extends Controller
             // $request->get('online'), 勾選記住我會回傳 1, 相當於 true;
             $result = Auth::guard('admin')->attempt($data, $request->get('online'));
             if ($result) {
-                return redirect('/admin/index/index');
+                return redirect('/admin/index/welcome');
             } else {
                 // 會跳出錯誤訊息
                 return redirect('/admin/public/login')->withErrors([

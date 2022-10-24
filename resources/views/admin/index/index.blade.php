@@ -19,17 +19,25 @@
             color: var(--light);
         }
 
+        .container-fluid{
+            padding-right: 0;
+        }
+
         a,
         a:hover {
             text-decoration: none;
             color: inherit;
         }
 
-        .header {
+        .header.public {
             font-weight: 500;
         }
 
-        .head {
+        .row {
+            margin-right: 0;
+        }
+
+        .header.public .head {
             min-width: 100%;
             height: 4rem;
             display: flex;
@@ -37,29 +45,29 @@
             margin-bottom: 0;
         }
 
-        .head .title {
+        .header.public .head .title {
             padding-left: 4rem;
         }
 
-        .head .user {
+        .header.public .head .user {
             margin-left: auto;
             padding-right: 1rem;
         }
 
-        .head .dropdown-menu {
+        .header.public .head .dropdown-menu {
             min-width: 3rem;
             margin: 0 1rem;
         }
 
-        .head .dropdown-menu li:hover .sub-menu {
+        .header.public .head .dropdown-menu li:hover .sub-menu {
             visibility: visible;
         }
 
-        .head .dropdown:hover .dropdown-menu {
+        .header.public .head .dropdown:hover .dropdown-menu {
             display: block;
         }
 
-        .head .dropdown a.dropdown-item:active {
+        .header.public .head .dropdown a.dropdown-item:active {
             background-color: var(--dark);
         }
 
@@ -78,13 +86,9 @@
             box-shadow: none;
         }
 
-        .content {
-            width: 100%;
-        }
-
-        .content .row {
+        .content .row .sidebar {
             flex-wrap: nowrap;
-            height: calc(100vh - 64px);
+            height: 100%;
         }
 
         .content .sidebar {
@@ -154,7 +158,7 @@
             background-color: none;
         }
 
-        .content .maincontent iframe {
+        .content .maincontent .iframe {
             position: absolute;
             width: 100%;
             height: 100%;
@@ -174,11 +178,11 @@
 
 <body>
     <div class="container-fluid">
-        <div class="header">
+        <div class="header public">
             <div class="row">
                 <div class="head bg-dark h2">
                     <div class="title">
-                        <a href="/admin/index/index">後台系統</a>
+                        <a href="/admin/index/welcome">後台系統</a>
                     </div>
                     <div class="user">
                         <div class="dropdown">
@@ -207,15 +211,18 @@
                                 帳號管理
                             </button>
                             <div class="accountDropdown" id="sidebarDropdown">
-                                <p><a class="dropdown-item" href="#">新增管理員</a></p>
-                                <p><a class="dropdown-item" href="#">管理員列表</a></p>
+                                <p><a class="dropdown-item" target="iframe-welcome" href="#">新增管理員</a></p>
+                                <p><a class="dropdown-item" target="iframe-welcome" href="/admin/manager/index">管理員列表</a></p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div id="maincontent" class="maincontent">
-                    <iframe id="iframe-welcome" class="iframe" data-scrolltop="0" scrolling="yes" frameborder="0"
-                        src="/admin/index/welcome"></iframe>
+                    <!-- <iframe id="iframe-welcome" name="iframe-welcome" class="iframe" data-scrolltop="0" scrolling="yes" frameborder="0"
+                        src="/admin/index/welcome"></iframe> -->
+                        <div class="iframe">
+                            @yield('content')
+                        </div>
                 </div>
             </div>
         </div>
